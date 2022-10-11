@@ -1,0 +1,8 @@
+.Lists {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 1rem;
+}

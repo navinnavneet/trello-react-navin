@@ -1,0 +1,15 @@
+.Boards {
+  display: flex;
+  padding: 1rem;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.Boards a {
+  text-decoration: none;
+}
+
+.Board {
+  background-color: #ffecef;
+  padding: 3rem 4rem;
+}

@@ -1,0 +1,22 @@
+.List {
+  flex-basis: 12rem;
+  flex-grow: 0;
+  flex-shrink: 0;
+  background-color: #ffecef;
+  margin: 1rem;
+  padding: 1rem;
+}
+
+.List h2 {
+  font-size: 1rem;
+}
+
+.ListHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.DeleteIcon {
+  cursor: pointer;
+}
