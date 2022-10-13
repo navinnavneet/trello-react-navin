@@ -9,6 +9,10 @@
   display: flex;
 }
 
+.HeaderLeft a {
+  text-decoration: none;
+}
+
 .Logo {
   display: flex;
   justify-content: flex-start;

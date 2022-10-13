@@ -31,22 +31,25 @@ export default function cardsReducer(state = initialState, action) {
       };
 
     case actionTypes.CREATE_CARD:
-      const newCardsArr = [...state.cards[action.payload.id]];
+      const newCards = { ...state.cards };
+      const newCardsArr = [...newCards[action.payload.id]];
       newCardsArr.push(action.payload.card);
-      const newCards = { ...state.cards, [action.payload.id]: newCardsArr };
+      newCards[action.payload.id] = newCardsArr;
       return {
         ...state,
         cards: newCards,
       };
 
-    // case actionTypes.DELETE_CARD:
-    //   const updatedCards = state.cards[action.payload].filter(
-    //     (card) => card.id !== action.payload
-    //   );
-    //   return {
-    //     ...state,
-    //     lists: updatedCards,
-    //   };
+    case actionTypes.DELETE_CARD:
+      const updatedCards = { ...state.cards };
+      const updatedCardsArr = updatedCards[action.payload.listId].filter(
+        (card) => card.id !== action.payload.id
+      );
+      updatedCards[action.payload.listId] = updatedCardsArr;
+      return {
+        ...state,
+        cards: updatedCards,
+      };
 
     default:
       return state;

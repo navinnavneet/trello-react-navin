@@ -1,6 +1,7 @@
 import { Component } from "react";
 import styles from "./Card.module.css";
 import DeleteIcon from "@mui/icons-material/Delete";
+import CardDetails from "../cardDetails/CardDetails";
 
 export default class Card extends Component {
   constructor(props) {
@@ -22,16 +23,16 @@ export default class Card extends Component {
           this.toggleCheckListHandler();
         }}
       >
-        {/* {this.state.showCheckList ? (
+        {this.state.showCheckList ? (
           <CardDetails
             {...this.props}
             hideCheckList={this.toggleCheckListHandler}
           />
-        ) : null} */}
+        ) : null}
         <p>{this.props.name}</p>
         <DeleteIcon
           onClick={() => {
-            // this.props.handleCardDelete(this.props.id);
+            this.props.handleCardDelete(this.props.id);
           }}
         />
       </div>

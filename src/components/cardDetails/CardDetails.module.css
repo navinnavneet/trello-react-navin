@@ -1,0 +1,35 @@
+.Modal {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  min-height: 100%;
+  padding: 3rem 15rem;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 5;
+}
+
+.CheckList {
+  background-color: #ffecef;
+  width: 100%;
+  min-height: 100%;
+  z-index: 10;
+  padding: 2rem;
+  cursor: default;
+}
+.Header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.Header button {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  padding: 8px 9px 6px;
+}
+
+.Header button:hover {
+  background-color: #fff;
+}

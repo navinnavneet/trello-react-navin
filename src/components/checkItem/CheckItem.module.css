@@ -1,0 +1,24 @@
+.CheckItem {
+  display: flex;
+  padding: 0.5rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Item {
+  display: flex;
+  align-items: center;
+}
+
+input[type="checkbox"] {
+  margin-right: 1rem;
+  cursor: pointer;
+}
+
+.Completed {
+  text-decoration: line-through;
+}
+
+.Delete {
+  cursor: pointer;
+}

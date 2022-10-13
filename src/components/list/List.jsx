@@ -11,13 +11,15 @@ class List extends Component {
     this.props.getCards(this.props.id);
   }
 
-  submitHandler = () => {};
+  submitHandler = (value) => {
+    this.props.createCard(value, this.props.id);
+  };
+
+  deleteCardHandler = (id) => {
+    this.props.deleteCard(id, this.props.id);
+  };
 
   render() {
-    console.log(
-      this.props.cards.hasOwnProperty(this.props.id) &&
-        this.props.cards[this.props.id]
-    );
     return (
       <div className={styles.List}>
         <div className={styles.ListHeader}>
@@ -29,9 +31,14 @@ class List extends Component {
             className={styles.DeleteIcon}
           />
         </div>
-        {/* {this.props.cards[this.props.id].map((card, i) => (
-          <Card key={i} {...card} handleCardDelete={this.deleteCardHandler} />
-        ))} */}
+        {this.props.cards[this.props.id] &&
+          this.props.cards[this.props.id].map((card) => (
+            <Card
+              key={card.id}
+              {...card}
+              handleCardDelete={this.deleteCardHandler}
+            />
+          ))}
         <Form name="Card" submit={this.submitHandler} />
       </div>
     );
@@ -50,7 +57,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
     getCards: (id) => dispatch(actions.getCards(id)),
     createCard: (name, id) => dispatch(actions.createCard(name, id)),
-    deleteCard: (id) => dispatch(actions.deleteCard(id)),
+    deleteCard: (id, listId) => dispatch(actions.deleteCard(id, listId)),
   };
 };
 

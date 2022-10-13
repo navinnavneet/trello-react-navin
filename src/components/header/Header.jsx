@@ -1,4 +1,5 @@
 import { Component } from "react";
+import { Link } from "react-router-dom";
 import styles from "./Header.module.css";
 import AlignVerticalTopIcon from "@mui/icons-material/AlignVerticalTop";
 import SearchIcon from "@mui/icons-material/Search";
@@ -8,10 +9,10 @@ export default class Header extends Component {
     return (
       <header className={styles.Header}>
         <div className={styles.HeaderLeft}>
-          <div className={styles.Logo}>
+          <Link to="/" className={styles.Logo}>
             <AlignVerticalTopIcon />
             <h1>NuTrello</h1>
-          </div>
+          </Link>
           <ul className={styles.Navbar}>
             <li>Workplaces</li>
             <li>Recent</li>

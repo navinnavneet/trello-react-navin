@@ -12,12 +12,16 @@ import thunk from "redux-thunk";
 import boardsReducer from "./store/reducers/boardsReducer";
 import listsReducer from "./store/reducers/listsReducer";
 import cardsReducer from "./store/reducers/cardsReducer";
+import checklistsReducer from "./store/reducers/checklistsReducer";
+import checkItemsReducer from "./store/reducers/checkItemsReducer";
 import { BrowserRouter } from "react-router-dom";
 
 const rootReducer = combineReducers({
   boardsReducer,
   listsReducer,
   cardsReducer,
+  checklistsReducer,
+  checkItemsReducer,
 });
 
 const store = createStore(rootReducer, applyMiddleware(thunk));
